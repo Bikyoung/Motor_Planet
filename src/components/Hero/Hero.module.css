@@ -1,0 +1,24 @@
+@reference "../../assets/styles/global.css";
+
+.heroContentWrapper {
+    gap: var(--spacing-xl);
+}
+
+.heroSubTitle {
+    @apply text-center leading-tight tracking-[-0.01em];
+
+    font-size: clamp(1.25rem, 0.793rem + 1.527vw, 2.625rem);
+    margin-bottom: var(--spacing-xs);
+}  
+
+.heroMainTitle {
+    @apply text-center leading-[1.1] tracking-[-0.01em];
+    
+    font-size: clamp(2.25rem, 1.544rem + 2.359vw, 4.375rem);
+}
+
+.heroGiant {
+    @apply text-center text-[#0237B2] font-extrabold leading-[1.1] tracking-[-0.01em];
+
+    font-size: clamp(2.75rem, 0.976rem + 7.885vw, 10.438rem);
+}

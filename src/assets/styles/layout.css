@@ -1,0 +1,12 @@
+@layer components {
+    .section {
+        @apply w-full py-80 laptop:py-100 desktop:py-120; 
+    }
+
+    .content-wrapper {
+        @apply w-full max-w-440 mx-auto flex flex-col justify-center items-center;  
+        @apply tablet:max-w-720;
+        @apply laptop:max-w-960;
+        @apply desktop:max-w-1440;
+    }
+}

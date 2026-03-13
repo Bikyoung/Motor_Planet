@@ -1,0 +1,55 @@
+@theme {
+    --font-sans: "Pretendard", system-ui, sans-serif;
+
+    /* breakpoint */
+    --breakpoint-tablet: 30rem;  /* min-width: 480px */
+    --breakpoint-laptop: 48rem;  /* min-width: 768px */
+    --breakpoint-desktop: 64rem; /* min-width: 1024px */
+
+    /* color */
+    --color-white: #FFFFFF; 
+    --color-black: #121212; 
+
+    /* spacing */
+    --spacing: 1px;
+
+    /* fontsize */
+}
+
+:root {
+    --spacing-xl: calc(120 / 16 * 1rem);
+    --spacing-lg: calc(80 / 16 * 1rem);
+    --spacing-md: calc(40 / 16 * 1rem);  
+    --spacing-sm: calc(20 / 16 * 1rem);
+    --spacing-xs: calc(8 / 16 * 1rem);
+}
+  
+@media (min-width: 30rem) {
+    :root {
+        --spacing-xl: calc(120 / 16 * 1rem);
+        --spacing-lg: calc(80 / 16 * 1rem);
+        --spacing-md: calc(40 / 16 * 1rem);  
+        --spacing-sm: calc(20 / 16 * 1rem);
+        --spacing-xs: calc(10 / 16 * 1rem);
+    }
+}
+  
+@media (min-width: 48rem) {
+    :root {
+        --spacing-xl: calc(150 / 16 * 1rem);
+        --spacing-lg: calc(100 / 16 * 1rem);
+        --spacing-md: calc(50 / 16 * 1rem);
+        --spacing-sm: calc(25 / 16 * 1rem);
+        --spacing-xs: calc(12 / 16 * 1rem);
+    }
+}
+  
+@media (min-width: 64rem) {
+    :root {
+        --spacing-xl: calc(180 / 16 * 1rem);
+        --spacing-lg: calc(120 / 16 * 1rem);
+        --spacing-md: calc(60 / 16 * 1rem);
+        --spacing-sm: calc(30 / 16 * 1rem);
+        --spacing-xs: calc(15 / 16 * 1rem);
+    }
+}
