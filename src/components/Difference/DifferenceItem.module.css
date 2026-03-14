@@ -1,0 +1,6 @@
+@reference "../../assets/styles/global.css";
+
+.differenceImage {
+    width: clamp(5rem, 2.922rem + 6.94vw, 11.25rem);
+}
+

@@ -3,9 +3,8 @@ import heroImg from '../../assets/images/hero-image.webp';
 
 function Hero() {
     return (
-        <section className="bg-[#0869F4] section">
+        <section className="section bg-[#0869F4]" data-component="hero">
             <div className={`content-wrapper ${styles.heroContentWrapper}`}>
-                {/* 타이틀 영역 */}
                 <div className="title-wrapper">
                     <p className={styles.heroSubTitle}>
                         좋은 차량을 가장 현명한 조건으로
@@ -15,7 +14,7 @@ function Hero() {
                     </h1>
                 </div>
                 <div className="w-full relative">
-                    <img src={heroImg} className="relative z-20 mx-auto w-[clamp(17.5rem,8.774rem+29.146vw,43.75rem)]" alt="모토플래닛 중고차 히어로 차량" />
+                    <img src={heroImg} className={`relative z-20 mx-auto ${styles.heroImage}`} alt="모토플래닛 중고차 히어로 차량" />
                     <p className={`w-full absolute top-1/2 left-1/2 z-10 -translate-1/2 ${styles.heroGiant}`}>MOTOR PLANET</p>
                 </div>
             </div>

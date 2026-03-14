@@ -17,6 +17,10 @@
     font-size: clamp(2.25rem, 1.544rem + 2.359vw, 4.375rem);
 }
 
+.heroImage {
+    width: clamp(17.5rem, 8.774rem + 29.146vw, 43.75rem);
+}
+
 .heroGiant {
     @apply text-center text-[#0237B2] font-extrabold leading-[1.1] tracking-[-0.01em];
 
