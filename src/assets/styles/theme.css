@@ -13,6 +13,7 @@
 
     /* spacing */
     --spacing: 1px;
+    --spacing-2xl: var(--spacing-2xl);
     --spacing-xl: var(--spacing-xl);
     --spacing-lg: var(--spacing-lg);
     --spacing-md: var(--spacing-md);
@@ -31,6 +32,11 @@
     --text-card-title--letter-spacing: -0.01em;
     --text-card-title--font-weight: 700;
 
+    /* body-xl */
+    --text-body-xl: var(--fs-body-xl);
+    --text-body-xl--line-height: 1.1;
+    --text-body-xl--letter-spacing: -0.01em; 
+
     /* body-md */
     --text-body-md: var(--fs-body-md);
     --text-body-md--line-height: 1.4;
@@ -38,6 +44,7 @@
 
 :root {
     /* spacing */
+    --spacing-2xl: calc(240 / 16 * 1rem);
     --spacing-xl: calc(120 / 16 * 1rem);
     --spacing-lg: calc(80 / 16 * 1rem);
     --spacing-md: calc(40 / 16 * 1rem);  
@@ -47,6 +54,7 @@
     /* fontsize */
     --fs-sec-title: calc(30 / 16 * 1rem);
     --fs-card-title: calc(20 / 16 * 1rem);
+    --fs-body-xl: calc(36 / 16 * 1rem);
     --fs-body-md: calc(14 / 16 * 1rem);
 }
   
@@ -58,6 +66,7 @@
         /* fontsize */
         --fs-sec-title: calc(36 / 16 * 1rem);
         --fs-card-title: calc(24 / 16 * 1rem);
+        --fs-body-xl: calc(46 / 16 * 1rem);
         --fs-body-md: calc(15 / 16 * 1rem);
     }
 }
@@ -65,6 +74,7 @@
 @media (min-width: 48rem) {
     :root {
         /* spacing */
+        --spacing-2xl: calc(300 / 16 * 1rem);
         --spacing-xl: calc(150 / 16 * 1rem);
         --spacing-lg: calc(100 / 16 * 1rem);
         --spacing-md: calc(50 / 16 * 1rem);
@@ -74,6 +84,7 @@
         /* fontsize */
         --fs-sec-title: calc(44 / 16 * 1rem);
         --fs-card-title: calc(28 / 16 * 1rem);
+        --fs-body-xl: calc(58 / 16 * 1rem);
         --fs-body-md: calc(16 / 16 * 1rem);
     }
 }
@@ -81,6 +92,7 @@
 @media (min-width: 64rem) {
     :root {
         /* spacing */
+        --spacing-2xl: calc(360 / 16 * 1rem);
         --spacing-xl: calc(180 / 16 * 1rem);
         --spacing-lg: calc(120 / 16 * 1rem);
         --spacing-md: calc(60 / 16 * 1rem);
@@ -90,5 +102,6 @@
         /* fontsize */
         --fs-sec-title: calc(52 / 16 * 1rem);
         --fs-card-title: calc(30 / 16 * 1rem);
+        --fs-body-xl: calc(70 / 16 * 1rem);
     }
 }

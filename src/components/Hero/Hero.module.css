@@ -5,14 +5,7 @@
 
     /* 폰트 사이즈 : 20 ~ 42px */
     font-size: clamp(1.25rem, 0.793rem + 1.527vw, 2.625rem);
-}  
-
-.heroMainTitle {
-    @apply text-center leading-[1.1] tracking-[-0.01em];
-    
-    /* 폰트 사이즈 : 36 ~ 70px */
-    font-size: clamp(2.25rem, 1.544rem + 2.359vw, 4.375rem);
-}
+} 
 
 .heroImage {
     width: clamp(17.5rem, 8.774rem + 29.146vw, 43.75rem);

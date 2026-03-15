@@ -1,0 +1,9 @@
+@reference "../../assets/styles/global.css";
+
+.inspectionSection {
+    @apply bg-center bg-no-repeat bg-cover;
+}
+
+.inspectionSection::before {
+    @apply w-full h-full absolute inset-0 z-10 content-[""] bg-[#064FB7]/78;
+}
