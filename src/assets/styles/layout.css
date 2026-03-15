@@ -1,14 +1,12 @@
 @layer components {
     .section {
-        @apply w-full py-80 laptop:py-100 desktop:py-120; 
+        @apply w-full py-lg; 
     }
 
     .content-wrapper {
-        @apply w-full max-w-440 mx-auto flex flex-col justify-center items-center px-16;  
+        @apply w-full max-w-440 mx-auto flex flex-col justify-center items-center gap-lg px-16;  
         @apply tablet:max-w-720;
         @apply laptop:max-w-960 laptop:px-32;
         @apply desktop:max-w-1440 desktop:px-80;
-
-        gap: var(--spacing-lg);
     }
 }

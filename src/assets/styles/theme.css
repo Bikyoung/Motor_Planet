@@ -13,8 +13,27 @@
 
     /* spacing */
     --spacing: 1px;
+    --spacing-xl: var(--spacing-xl);
+    --spacing-lg: var(--spacing-lg);
+    --spacing-md: var(--spacing-md);
+    --spacing-sm: var(--spacing-sm);
+    --spacing-xs: var(--spacing-xs);
 
-    
+    /* typography */
+    /* 섹션 타이틀 */
+    --text-sec-title: var(--fs-sec-title);
+    --text-sec-title--line-height: 1.25;
+    --text-sec-title--letter-spacing: -0.01em;
+
+    /* 카드 타이틀 */
+    --text-card-title: var(--fs-card-title);
+    --text-card-title--line-height: 1.25;
+    --text-card-title--letter-spacing: -0.01em;
+    --text-card-title--font-weight: 700;
+
+    /* body-md */
+    --text-body-md: var(--fs-body-md);
+    --text-body-md--line-height: 1.4;
 }
 
 :root {
@@ -26,6 +45,7 @@
     --spacing-xs: calc(8 / 16 * 1rem);
 
     /* fontsize */
+    --fs-sec-title: calc(30 / 16 * 1rem);
     --fs-card-title: calc(20 / 16 * 1rem);
     --fs-body-md: calc(14 / 16 * 1rem);
 }
@@ -36,9 +56,9 @@
         --spacing-xs: calc(10 / 16 * 1rem);
                 
         /* fontsize */
+        --fs-sec-title: calc(36 / 16 * 1rem);
         --fs-card-title: calc(24 / 16 * 1rem);
         --fs-body-md: calc(15 / 16 * 1rem);
-
     }
 }
   
@@ -52,9 +72,9 @@
         --spacing-xs: calc(12 / 16 * 1rem);
         
         /* fontsize */
+        --fs-sec-title: calc(44 / 16 * 1rem);
         --fs-card-title: calc(28 / 16 * 1rem);
         --fs-body-md: calc(16 / 16 * 1rem);
-
     }
 }
   
@@ -68,7 +88,7 @@
         --spacing-xs: calc(15 / 16 * 1rem);
                 
         /* fontsize */
+        --fs-sec-title: calc(52 / 16 * 1rem);
         --fs-card-title: calc(30 / 16 * 1rem);
-
     }
 }

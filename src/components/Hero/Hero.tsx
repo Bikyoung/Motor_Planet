@@ -4,12 +4,12 @@ import heroImg from '../../assets/images/hero-image.webp';
 function Hero() {
     return (
         <section className="section bg-[#0869F4]" data-component="hero">
-            <div className={`content-wrapper ${styles.heroContentWrapper}`}>
+            <div className={"gap-xl content-wrapper"}>
                 <div className="title-wrapper">
                     <p className={styles.heroSubTitle}>
                         좋은 차량을 가장 현명한 조건으로
                     </p>
-                    <h1 className={styles.heroMainTitle}>
+                    <h1 className={`mt-xs ${styles.heroMainTitle}`}>
                         합리적인 <span className="font-extrabold">가격</span>,<br className="block tablet:hidden" /> <span className="font-extrabold">검증</span>된 중고차
                     </h1>
                 </div>

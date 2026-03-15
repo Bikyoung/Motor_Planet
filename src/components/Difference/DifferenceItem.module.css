@@ -1,6 +1,11 @@
-@reference "../../assets/styles/global.css";
-
 .differenceImage {
+    /* 너비 : 80 ~ 180px */
     width: clamp(5rem, 2.922rem + 6.94vw, 11.25rem);
+}
+
+.differenceItem {
+    /* 좌우 패딩 : 30 ~ 120px */
+    padding-left: clamp(1.875rem, 0.005rem + 6.246vw, 7.5rem);  
+    padding-right: clamp(1.875rem, 0.005rem + 6.246vw, 7.5rem);
 }
 
