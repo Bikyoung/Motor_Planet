@@ -1,0 +1,28 @@
+@reference "../../assets/styles/global.css";
+
+.reviewSlide {
+    /* 너비: 340 ~ 380px */
+    width: clamp(21.25rem, 20.419rem + 2.776vw, 23.75rem);
+}
+
+.rating {
+    /* 너비: 160 ~ 175px */
+    width: clamp(10rem, 9.376rem + 1.301vw, 10.938rem);
+}
+
+.customer {
+    @apply text-body-sm text-gray font-medium;
+}
+
+.desc {
+    @apply text-body-md text-black;
+}
+
+.carImg {
+    /* 너비: 280 ~ 320px */
+    width: clamp(17.5rem, 16.669rem + 2.776vw, 20rem);
+}
+
+.carInfo {
+    @apply text-body-sm text-[#7D7D7D] font-medium;
+}

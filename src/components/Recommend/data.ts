@@ -1,7 +1,7 @@
 import type { IRecommendItem } from "./types";
-import { RecommendImages } from "../../assets/images/index";
+import { recommendImages } from "../../assets/images/index";
 
-const { car01Img, car02Img, car03Img, car04Img, car05Img, car06Img } = RecommendImages;
+const { car01Img, car02Img, car03Img, car04Img, car05Img, car06Img } = recommendImages;
 
 export const RecommendItems: IRecommendItem[] = [
     {

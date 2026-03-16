@@ -43,10 +43,6 @@
     background-position: left;
 }
 
-.recommendItem {
-    @apply bg-white rounded-[20px];
-}
-
 .carImage {
     width: clamp(13.75rem, 12.503rem + 4.164vw, 17.5rem);
 }
@@ -62,7 +58,7 @@
 }
 
 .infoLabel {
-    @apply text-[#999];
+    @apply text-gray;
 }
 
 .infoData {

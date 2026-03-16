@@ -1,7 +1,7 @@
-import { DifferenceImages } from "../../assets/images/index";
+import { differenceImages } from "../../assets/images/index";
 import type { IDifferenceItem } from "./types";
 
-const {chatImg, checkImg, moneyImg, noImg} = DifferenceImages;
+const {chatImg, checkImg, moneyImg, noImg} = differenceImages;
 
 export const differenceItems: IDifferenceItem[] = [
     {

@@ -2,4 +2,8 @@
     .sec-title {
         @apply text-sec-title text-center;
     }
+
+    .card {
+        @apply px-30 py-40 flex flex-col items-center gap-sm bg-white rounded-[20px];
+    }
 }

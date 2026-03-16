@@ -1,9 +1,9 @@
-import styles from "./Recommend.module.css";
 import type { IRecommendItem } from "./types";
+import styles from "./Recommend.module.css";
 
 function RecommendItem({imgSrc, specs, title, date, distance, cost}: IRecommendItem) {
     return (
-        <div className={`px-30 py-40 flex flex-col items-center gap-sm ${styles.recommendItem}`}>
+        <div className="card">
             {/* 이미지 영역 */}
             <img src={imgSrc} className={`aspect-ratio ${styles.carImage}`} alt="추천 차량 이미지" />
 

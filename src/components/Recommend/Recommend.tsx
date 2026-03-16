@@ -1,13 +1,14 @@
-import { Pagination } from "swiper/modules";
-
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
 
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-import styles from "./Recommend.module.css";
 import RecommendItem from "./RecommendItem";
+
 import { RecommendItems } from "./data";
+
+import styles from "./Recommend.module.css";
 
 const swiperGap = {
     mobile: 8,
