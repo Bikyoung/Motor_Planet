@@ -1,0 +1,5 @@
+@layer components {
+    .sec-title {
+        @apply text-sec-title text-center;
+    }
+}

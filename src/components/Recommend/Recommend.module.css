@@ -1,0 +1,91 @@
+@reference "../../assets/styles/global.css";
+
+.section {
+    --color-blue: #002898;
+}
+
+.recommendList :global(.swiper-wrapper){
+    @apply laptop:grid laptop:grid-rows-3 laptop:grid-cols-2 laptop:gap-xs;
+}
+
+.recommendList :global(.swiper-pagination) {
+    @apply relative mt-sm laptop:hidden;
+}
+
+.recommendList :global(.swiper-pagination-bullet) {
+    @apply opacity-100 border border-white bg-transparent;
+}
+
+.recommendList :global(.swiper-pagination-bullet-active) {
+    @apply bg-white
+}
+
+.recommendSlide {
+    /* 너비 : 280 ~ 340px */
+    width: clamp(17.5rem, 16.253rem + 4.164vw, 21.25rem);
+}
+
+.recommendCta {
+    @apply text-body-lg border rounded-full transition-all duration-500 ease-in-out;
+
+    /* 흰색과 투명 영역이 50%씩 나뉜, 구분이 명확한 그라데이션 */
+    background-image: linear-gradient(to right, rgba(255,255,255,0.2) 50%, transparent 50%);   
+     /* 배경 너비를 200%로 설정하여 흰색과 투명 영역을 각 100% 너비로 설정 */
+    background-size: 200% 100%;    
+    /* 배경을 요소의 우측 끝에 붙여 투명 영역만 보임 */   
+    background-position: right;    
+}
+
+.recommendCta:hover {
+    @apply scale-105;
+
+    /* 배경을 요소의 왼쪽 끝에 붙여 흰색 영역만 보임 */
+    background-position: left;
+}
+
+.recommendItem {
+    @apply bg-white rounded-[20px];
+}
+
+.carImage {
+    width: clamp(13.75rem, 12.503rem + 4.164vw, 17.5rem);
+}
+
+.carSpec {
+    @apply text-body-sm font-semibold bg-(--color-blue) rounded-full;
+}
+
+.carStatus {
+    @apply flex justify-between items-center text-body-lg;
+
+    height: clamp(2.375rem, 2.292rem + 0.278vw, 2.625rem);
+}
+
+.infoLabel {
+    @apply text-[#999];
+}
+
+.infoData {
+    @apply text-black;
+}
+
+.carCost {
+    @apply font-bold text-(--color-blue);
+
+    font-size: clamp(1.125rem, 0.959rem + 0.555vw, 1.625rem);
+}
+
+.itemCta {
+    @apply px-15 py-8 text-body-md font-semibold text-(--color-blue) border rounded-full
+    transition duration-300 ease-in-out;
+}
+
+.itemCta:hover {
+    @apply bg-[#CEDAFB];
+}
+
+@media (min-width: 1200px) {
+    .recommendList :global(.swiper-wrapper){
+        @apply grid-rows-2 grid-cols-3;
+    }
+}

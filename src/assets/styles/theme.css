@@ -37,9 +37,18 @@
     --text-body-xl--line-height: 1.1;
     --text-body-xl--letter-spacing: -0.01em; 
 
+    /* body-lg */
+    --text-body-lg: var(--fs-body-lg);
+    --text-body-lg--line-height: 1.25;
+    --text-body-lg--font-weight: 600;
+
     /* body-md */
     --text-body-md: var(--fs-body-md);
     --text-body-md--line-height: 1.4;
+
+    /* body-sm */
+    --text-body-sm: var(--fs-body-sm);
+    --text-body-sm--line-height: 1.4;
 }
 
 :root {
@@ -55,7 +64,9 @@
     --fs-sec-title: calc(30 / 16 * 1rem);
     --fs-card-title: calc(20 / 16 * 1rem);
     --fs-body-xl: calc(36 / 16 * 1rem);
+    --fs-body-lg: calc(16 / 16 * 1rem);
     --fs-body-md: calc(14 / 16 * 1rem);
+    --fs-body-sm: calc(12 / 16 * 1rem);
 }
   
 @media (min-width: 30rem) {
@@ -67,7 +78,9 @@
         --fs-sec-title: calc(36 / 16 * 1rem);
         --fs-card-title: calc(24 / 16 * 1rem);
         --fs-body-xl: calc(46 / 16 * 1rem);
+        --fs-body-lg: calc(18 / 16 * 1rem);
         --fs-body-md: calc(15 / 16 * 1rem);
+        --fs-body-sm: calc(13 / 16 * 1rem);
     }
 }
   
@@ -85,7 +98,9 @@
         --fs-sec-title: calc(44 / 16 * 1rem);
         --fs-card-title: calc(28 / 16 * 1rem);
         --fs-body-xl: calc(58 / 16 * 1rem);
+        --fs-body-lg: calc(20 / 16 * 1rem);
         --fs-body-md: calc(16 / 16 * 1rem);
+        --fs-body-sm: calc(14 / 16 * 1rem);
     }
 }
   
@@ -102,6 +117,6 @@
         /* fontsize */
         --fs-sec-title: calc(52 / 16 * 1rem);
         --fs-card-title: calc(30 / 16 * 1rem);
-        --fs-body-xl: calc(70 / 16 * 1rem);
+        --fs-body-xl: calc(68 / 16 * 1rem);
     }
 }

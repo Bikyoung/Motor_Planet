@@ -2,6 +2,7 @@ import { DifferenceImages } from "../../assets/images/index";
 import type { IDifferenceItem } from "./types";
 
 const {chatImg, checkImg, moneyImg, noImg} = DifferenceImages;
+
 export const differenceItems: IDifferenceItem[] = [
     {
         id: 1,

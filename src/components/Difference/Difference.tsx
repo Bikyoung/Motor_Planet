@@ -5,7 +5,7 @@ function Difference() {
     return (
         <section className="section bg-[#075FDC]" data-component="difference">
             <div className="content-wrapper">
-                <h2 className="text-sec-title">
+                <h2 className="sec-title">
                     왜 <span className="font-extrabold">모토플래닛</span>인가요?
                 </h2>   
                 <ul className="w-full flex flex-col gap-sm">
