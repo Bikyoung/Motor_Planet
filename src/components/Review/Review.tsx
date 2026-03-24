@@ -18,9 +18,9 @@ const swiperGap = {
 
 function Review() {
     return (
-        <section className="section bg-[#0547A5]" data-component="review">
+        <section className="section bg-[#0547A5]" id="reviewSec" data-component="review">
             <div className="content-wrapper">
-                <h2 className="sec-title">
+                <h2 className="sec-title" data-aos="fade-up" data-aos-delay="300" data-aos-offset="400">
                     구매 고객의 <br className="block laptop:hidden"/><span className="font-extrabold">실제 후기</span>를 확인해보세요
                 </h2>
                 <Swiper 

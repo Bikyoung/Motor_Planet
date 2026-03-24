@@ -3,7 +3,7 @@ import type { IDifferenceItem } from "./types";
 
 function DifferenceItem({imgSrc, title, desc}: IDifferenceItem) {
     return (
-        <li className={`flex items-center gap-20 tablet:gap-md py-sm ${styles.differenceItem}`}>
+        <li className={`flex items-center gap-20 tablet:gap-md py-sm ${styles.differenceItem}`}  data-aos="fade-left" data-aos-delay="400" data-aos-offset="300">
             <img src={imgSrc} className={styles.differenceImage} alt="모토플래닛 차별점 아이콘" aria-hidden="true" />
             <div>
                 <h3 className="mb-xs text-card-title">{title}</h3>

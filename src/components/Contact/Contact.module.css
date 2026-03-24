@@ -1,0 +1,71 @@
+@reference "../../assets/styles/global.css";
+
+.section {
+    --color-blue: #0000FF;
+    --color-blue-50: #053B89;
+}
+
+.form {
+    @apply bg-white rounded-[10px];
+}
+
+.formField {
+    @apply relative flex flex-col;
+}
+
+.label {
+    @apply text-body-lg text-black;
+}
+
+.essential {
+    @apply text-red;
+}
+
+.input {
+    @apply mt-xs px-4 py-8 text-body-md text-black border-b border-gray-100;
+}
+
+.input::placeholder {
+    @apply text-gray-100;
+}
+
+.errorMessage {
+    @apply h-20 absolute left-0 bottom-0 translate-y-full text-body-sm text-red;
+}
+
+.formGuide, .agreeLabel {
+    @apply text-body-sm text-gray-100;
+}
+
+.customCheckbox {
+    @apply text-[#CCCCCC];
+}
+
+.checkbox:checked ~ .customCheckbox, .checkbox:checked ~ .agreeLabel{
+    @apply text-(--color-blue);
+} 
+
+.agreementButton {
+    @apply text-body-sm bg-(--color-blue-50);
+}
+
+.button {
+    @apply bg-(--color-blue-50) rounded-full text-body-lg;
+}
+
+.modal {
+    @apply bg-white;
+}
+
+.modalTitle {
+    @apply text-card-title text-black text-center;
+}
+
+.menuBtn {
+    @apply w-40 h-40 flex justify-end items-center;
+}
+
+.modalDesc {
+    @apply text-body-md text-gray-100;
+
+}

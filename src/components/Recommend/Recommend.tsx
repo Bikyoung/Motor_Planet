@@ -17,9 +17,9 @@ const swiperGap = {
 
 function Recommend() {
     return (
-        <section className={`section bg-[#064FB7] ${styles.section}`} data-component="recommend">
+        <section className={`section bg-[#064FB7] ${styles.section}`} id="recommendSec" data-component="recommend">
             <div className="content-wrapper">
-                <h2 className="sec-title">
+                <h2 className="sec-title" data-aos="fade-up" data-aos-delay="300" data-aos-offset="400">
                     모토플래닛의 <br className="block laptop:hidden" /><span className="font-extrabold">특가 차량</span>을 만나보세요
                 </h2>
                 <Swiper 

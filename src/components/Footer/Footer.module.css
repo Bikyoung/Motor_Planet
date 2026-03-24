@@ -1,0 +1,5 @@
+@reference "../../assets/styles/global.css";
+
+.footerDesc {
+    @apply text-body-sm text-gray;
+}

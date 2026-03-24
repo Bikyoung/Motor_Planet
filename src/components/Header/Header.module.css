@@ -1,0 +1,17 @@
+@reference "../../assets/styles/global.css";
+
+.header {
+    @apply bg-[rgba(8,105,244,0.95)];
+}
+
+.logo {
+    @apply text-card-title font-extrabold;
+}
+
+.menuBtn {
+    @apply w-40 h-40 flex laptop:hidden justify-end items-center;
+}
+
+.menu {
+    @apply text-body-lg font-medium;
+}

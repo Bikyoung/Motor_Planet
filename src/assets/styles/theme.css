@@ -9,8 +9,10 @@
     /* color */
     --color-white: #FFFFFF; 
     --color-black: #121212; 
+    --color-red: #FF0000;
     --color-yellow: #FFDD00;
     --color-gray: #999999;
+    --color-gray-100: #7D7D7D;
 
     /* spacing */
     --spacing: 1px;
