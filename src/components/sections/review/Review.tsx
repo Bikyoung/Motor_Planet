@@ -18,7 +18,7 @@ export default function Review() {
     return (
         <section id="review" className="section bg-[#0547A5]">
             <div className="content-wrapper">
-                <h2 className="sec-title">
+                <h2 className="sec-title" data-aos="fade-up" data-aos-anchor-placement="bottom-center" data-aos-delay="400" data-aos-easing="ease-in">
                     구매 고객의 <br className="block laptop:hidden"/><span className="font-extrabold">실제 후기</span>를 확인해보세요
                 </h2>
                 <Swiper 

@@ -11,6 +11,9 @@ import Footer from "./components/layout/Footer";
 import MobileMenu from "./components/layout/MobileMenu";
 import PrivacyModal from "./components/ui/modal/PrivacyModal";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 function App() {
   const [isOpen, setIsOpen] = useState(false);                // 모달 열림 여부
   const [isShow, setIsShow] = useState(false);                // 모바일 메뉴 열림 여부
@@ -19,6 +22,14 @@ function App() {
   const closeModal = () => setIsOpen(false);                  // 모달 닫는 함수
   const openMobileMenu = () => setIsShow(true);               // 모바일 메뉴 여는 함수
   const closeMobileMenu = () => setIsShow(false);             // 모바일 메뉴 닫는 함수
+
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: false,
+      offset: 0
+    });
+  }, []);
 
   // 모달 열림 여부에 따라 body 스크롤 제어
   useEffect(() => {

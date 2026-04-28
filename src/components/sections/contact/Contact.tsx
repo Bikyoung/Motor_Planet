@@ -156,12 +156,12 @@ export default function Contact({openModal}: Props) {
     return (
         <section id="contact" className={`section bg-[#054095] ${styles.section}`}>
             <div className="content-wrapper">
-                <h2 className="sec-title">
+                <h2 className="sec-title" data-aos="fade-up" data-aos-anchor-placement="center-top" data-aos-delay="400" data-aos-easing="ease-in">
                     <span className="font-extrabold">궁금한 점</span>이 있으신가요?
                 </h2>
 
                 {/* ---------- Form ---------- */}
-                <form className="flex flex-col gap-md w-full p-40 bg-white rounded-[10px] desktop:max-w-900" noValidate onSubmit={handleSubmit} ref={formRef}>
+                <form className="flex flex-col gap-md w-full p-40 bg-white rounded-[10px] desktop:max-w-900" noValidate onSubmit={handleSubmit} ref={formRef} data-aos="fade-up" data-aos-anchor-placement="bottom-center" data-aos-delay="550">
 
                     {/* ---------- User Info (Name, Tel) ---------- */}
                     <fieldset className="flex flex-col laptop:flex-row gap-md">

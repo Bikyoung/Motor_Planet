@@ -5,8 +5,10 @@ type Props = {
 };
 
 export default function Header({openMobileMenu}: Props) {
-    const [isScrolled, setIsScrolled] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);    // 스크롤 여부
 
+    /* 스크롤 위치(window.scrollY)가 40px 초과 시, 
+       isScrolled를 true로 업데이트하는 이벤트 리스너 등록하고 컴포넌트 종료 시 이를 제거 */
     useEffect(() => {
         const handleScroll = () => setIsScrolled(window.scrollY > 40);
 

@@ -19,7 +19,7 @@ export default function Recommend() {
     return (
         <section id="recommend" className={`section bg-[#064FB7] ${styles.section}`}>
             <div className="content-wrapper">
-                <h2 className="sec-title">
+                <h2 className="sec-title" data-aos="fade-up" data-aos-anchor-placement="bottom-center" data-aos-delay="400">
                     모토플래닛의 <br className="block laptop:hidden" /><span className="font-extrabold">특가 차량</span>을 만나보세요
                 </h2>
                 <Swiper 
@@ -40,6 +40,7 @@ export default function Recommend() {
                             spaceBetween: 0
                         }
                     }}
+                    data-aos="fade-up" data-aos-anchor-placement="center-center" data-aos-delay="500"
                 >
                     {RecommendItems.map(item => (
                         <SwiperSlide key={item.title} className="w-[clamp(17.5rem,16.253rem+4.164vw,21.25rem)]">
@@ -47,7 +48,7 @@ export default function Recommend() {
                         </SwiperSlide>
                     ))}
                 </Swiper>
-                <a href="#" className={`inline-block px-20 py-10 text-body-lg border rounded-full transition-all duration-500 ease-in-out ${styles.recommendCta}`}>
+                <a href="#" className={`inline-block px-20 py-10 text-body-lg border rounded-full transition-all duration-500 ease-in-out ${styles.recommendCta}`} data-aos="zoom-in" data-aos-anchor-placement="bottom-center" data-aos-easing="ease-in-out" data-aos-delay="700">
                     더 많은 차량 보기
                 </a>
             </div>
