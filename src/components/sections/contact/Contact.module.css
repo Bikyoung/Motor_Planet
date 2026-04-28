@@ -1,0 +1,43 @@
+@reference "../../../assets/styles/global.css";
+
+.section {
+    --color-blue: #0000FF;
+    --color-blue-50: #053B89;
+}
+
+.formField {
+    @apply relative flex flex-col;
+}
+
+.label {
+    @apply text-black text-body-lg;
+}
+
+.essential {
+    @apply text-red;
+}
+
+.input {
+    @apply mt-xs px-4 py-8 text-black text-body-md border-b border-gray-100;
+}
+
+.input::placeholder {
+    @apply text-gray-100;
+}
+
+.input.error {
+    @apply border-red;
+}
+
+.errorMessage {
+    @apply absolute left-0 bottom-0 translate-y-full h-20 text-red text-body-sm;
+}
+
+.formGuide, .agreeLabel {
+    @apply text-gray-100 text-body-sm;
+}
+
+.checkbox:checked ~ .customCheckbox, .checkbox:checked ~ .agreeLabel{
+    @apply text-(--color-blue);
+} 
+

@@ -1,0 +1,13 @@
+@reference "../../../assets/styles/global.css";
+
+.privacyItem {
+    @apply mb-[10px];
+}
+
+.privacyTitle {
+    @apply pb-[4px] text-body-lg;
+}
+
+.privacyDescList {
+    @apply pl-sm list-disc;
+}

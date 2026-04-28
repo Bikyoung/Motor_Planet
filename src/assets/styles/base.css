@@ -1,0 +1,9 @@
+@layer base {
+    body {
+        @apply font-sans text-white;
+    } 
+    
+    button {
+        @apply cursor-pointer;
+    }
+}

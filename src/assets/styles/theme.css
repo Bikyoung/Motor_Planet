@@ -1,0 +1,126 @@
+@theme {
+    --font-sans: "Pretendard", system-ui, sans-serif;
+
+    /* breakpoint */
+    --breakpoint-tablet: 30rem;  /* min-width: 480px */
+    --breakpoint-laptop: 48rem;  /* min-width: 768px */
+    --breakpoint-desktop: 64rem; /* min-width: 1024px */
+
+    /* color */
+    --color-white: #FFFFFF; 
+    --color-black: #121212;
+    --color-red: #FF0000;
+    --color-yellow: #FFDD00;
+    --color-blue: #002281;
+    --color-gray: #999999;
+    --color-gray-100: #7D7D7D;
+
+    /* spacing */
+    --spacing: 1px;
+    --spacing-2xl: var(--spacing-2xl);
+    --spacing-xl: var(--spacing-xl);
+    --spacing-lg: var(--spacing-lg);
+    --spacing-md: var(--spacing-md);
+    --spacing-sm: var(--spacing-sm);
+    --spacing-xs: var(--spacing-xs);
+
+    /* typography */
+    /* 섹션 타이틀 */
+    --text-sec-title: var(--fs-sec-title);
+    --text-sec-title--line-height: 1.25;
+    --text-sec-title--letter-spacing: -0.01em;
+
+    /* 카드 타이틀 */
+    --text-card-title: var(--fs-card-title);
+    --text-card-title--line-height: 1.25;
+    --text-card-title--letter-spacing: -0.01em;
+    --text-card-title--font-weight: 700;
+
+    /* body-xl */
+    --text-body-xl: var(--fs-body-xl);
+    --text-body-xl--line-height: 1.1;
+    --text-body-xl--letter-spacing: -0.01em; 
+
+    /* body-lg */
+    --text-body-lg: var(--fs-body-lg);
+    --text-body-lg--line-height: 1.25;
+    --text-body-lg--font-weight: 600;
+
+    /* body-md */
+    --text-body-md: var(--fs-body-md);
+    --text-body-md--line-height: 1.4;
+
+    /* body-sm */
+    --text-body-sm: var(--fs-body-sm);
+    --text-body-sm--line-height: 1.4;
+}
+
+:root {
+    /* spacing */
+    --spacing-2xl: calc(240 / 16 * 1rem);
+    --spacing-xl: calc(120 / 16 * 1rem);
+    --spacing-lg: calc(80 / 16 * 1rem);
+    --spacing-md: calc(40 / 16 * 1rem);  
+    --spacing-sm: calc(20 / 16 * 1rem);
+    --spacing-xs: calc(8 / 16 * 1rem);
+
+    /* fontsize */
+    --fs-sec-title: calc(30 / 16 * 1rem);
+    --fs-card-title: calc(20 / 16 * 1rem);
+    --fs-body-xl: calc(36 / 16 * 1rem);
+    --fs-body-lg: calc(16 / 16 * 1rem);
+    --fs-body-md: calc(14 / 16 * 1rem);
+    --fs-body-sm: calc(12 / 16 * 1rem);
+}
+  
+@media (min-width: 30rem) {
+    :root {
+        /* spacing */
+        --spacing-xs: calc(10 / 16 * 1rem);
+                
+        /* fontsize */
+        --fs-sec-title: calc(36 / 16 * 1rem);
+        --fs-card-title: calc(24 / 16 * 1rem);
+        --fs-body-xl: calc(46 / 16 * 1rem);
+        --fs-body-lg: calc(18 / 16 * 1rem);
+        --fs-body-md: calc(15 / 16 * 1rem);
+        --fs-body-sm: calc(13 / 16 * 1rem);
+    }
+}
+  
+@media (min-width: 48rem) {
+    :root {
+        /* spacing */
+        --spacing-2xl: calc(300 / 16 * 1rem);
+        --spacing-xl: calc(150 / 16 * 1rem);
+        --spacing-lg: calc(100 / 16 * 1rem);
+        --spacing-md: calc(50 / 16 * 1rem);
+        --spacing-sm: calc(25 / 16 * 1rem);
+        --spacing-xs: calc(12 / 16 * 1rem);
+        
+        /* fontsize */
+        --fs-sec-title: calc(44 / 16 * 1rem);
+        --fs-card-title: calc(28 / 16 * 1rem);
+        --fs-body-xl: calc(58 / 16 * 1rem);
+        --fs-body-lg: calc(20 / 16 * 1rem);
+        --fs-body-md: calc(16 / 16 * 1rem);
+        --fs-body-sm: calc(14 / 16 * 1rem);
+    }
+}
+  
+@media (min-width: 64rem) {
+    :root {
+        /* spacing */
+        --spacing-2xl: calc(360 / 16 * 1rem);
+        --spacing-xl: calc(180 / 16 * 1rem);
+        --spacing-lg: calc(120 / 16 * 1rem);
+        --spacing-md: calc(60 / 16 * 1rem);
+        --spacing-sm: calc(30 / 16 * 1rem);
+        --spacing-xs: calc(15 / 16 * 1rem);
+                
+        /* fontsize */
+        --fs-sec-title: calc(52 / 16 * 1rem);
+        --fs-card-title: calc(30 / 16 * 1rem);
+        --fs-body-xl: calc(68 / 16 * 1rem);
+    }
+}

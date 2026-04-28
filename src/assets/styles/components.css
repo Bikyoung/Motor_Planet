@@ -1,0 +1,26 @@
+@layer components {
+    .logo {
+        @apply text-card-title font-extrabold;
+    }
+
+    .menu {
+        @apply text-body-lg text-nowrap font-medium transition-colors duration-300 ease-in-out;
+    }
+
+    .menu:hover {
+        @apply text-yellow;
+
+    }
+
+    .toggle-btn {
+        @apply flex items-center justify-end w-44 h-44 text-card-title;
+    }
+
+    .sec-title {
+        @apply text-sec-title text-center;
+    }
+
+    .card {
+        @apply flex flex-col items-center gap-sm px-30 py-40 bg-white rounded-[20px];
+    }
+}

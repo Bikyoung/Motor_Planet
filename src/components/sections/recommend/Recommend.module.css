@@ -1,0 +1,57 @@
+@reference "../../../assets/styles/global.css";
+
+.section {
+    --color-blue: #002898;
+}
+
+.recommendList :global(.swiper-wrapper){
+    @apply laptop:grid laptop:grid-rows-3 laptop:grid-cols-2 laptop:gap-xs;
+}
+
+.recommendList :global(.swiper-pagination) {
+    @apply relative mt-sm laptop:hidden;
+}
+
+.recommendList :global(.swiper-pagination-bullet) {
+    @apply opacity-100 border border-white bg-transparent;
+}
+
+.recommendList :global(.swiper-pagination-bullet-active) {
+    @apply bg-white
+}
+
+.recommendCta {
+    /* 흰색과 투명 영역이 50%씩 나뉜, 구분이 명확한 그라데이션 */
+    background-image: linear-gradient(to right, rgba(255,255,255,0.2) 50%, transparent 50%);   
+     /* 배경 너비를 200%로 설정하여 흰색과 투명 영역을 각 100% 너비로 설정 */
+    background-size: 200% 100%;    
+    /* 배경을 요소의 우측 끝에 붙여 투명 영역만 보임 */   
+    background-position: right;    
+}
+
+.recommendCta:hover {
+    @apply scale-105;
+
+    /* 배경을 요소의 왼쪽 끝에 붙여 흰색 영역만 보임 */
+    background-position: left;
+}
+
+.carStatus {
+    @apply flex justify-between items-center text-body-lg;
+
+    height: clamp(2.375rem, 2.292rem + 0.278vw, 2.625rem);
+}
+
+.infoLabel {
+    @apply text-gray;
+}
+
+.infoData {
+    @apply text-black;
+}
+
+@media (min-width: 1200px) {
+    .recommendList :global(.swiper-wrapper){
+        @apply grid-rows-2 grid-cols-3;
+    }
+}
