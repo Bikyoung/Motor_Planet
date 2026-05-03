@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay } from 'swiper/modules';
+import { Autoplay, A11y, Keyboard } from 'swiper/modules';
 
 import "swiper/css";
 import "swiper/css/autoplay";
@@ -23,13 +23,18 @@ export default function Review() {
                 </h2>
                 <Swiper 
                     className="w-full"
-                    modules={[Autoplay]}
+                    modules={[Autoplay, A11y, Keyboard]}
                     spaceBetween={swiperGap.mobile}
                     slidesPerView="auto"
                     loop={true}
                     autoplay={{
                         delay: 800
                     }}
+                    a11y={{ 
+                        enabled: true,
+                        slideLabelMessage: '{{index}} / {{slidesLength}}'
+                     }}
+                    keyboard={{ enabled: true }}
                     breakpoints={{
                         768: {
                             spaceBetween: swiperGap.laptop

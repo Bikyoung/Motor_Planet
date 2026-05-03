@@ -13,7 +13,7 @@ export default function Hero() {
                     </h1>
                 </div>
                 <div className="relative w-full" data-aos="zoom-out-up" data-aos-delay="800" data-aos-easing="ease-in-out">
-                    <img src={heroImg} className="relative z-20 w-[clamp(17.5rem,8.774rem+29.146vw,43.75rem)] mx-auto" alt="모토플래닛 중고차 히어로 차량" />
+                    <img src={heroImg} className="relative z-20 w-[clamp(17.5rem,8.774rem+29.146vw,43.75rem)] mx-auto" alt="" />
                     <p className="absolute top-1/2 left-1/2 z-10 -translate-1/2 w-full text-[clamp(2.625rem,0.822rem+8.013vw,10.438rem)] text-center text-[#0237B2] font-extrabold leading-[1.1] tracking-[-0.01em]">MOTOR PLANET</p>
                 </div>
             </div>

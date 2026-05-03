@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 
 type Props = {
+    isShow: boolean;
     openMobileMenu: () => void;
 };
 
-export default function Header({openMobileMenu}: Props) {
+export default function Header({isShow, openMobileMenu}: Props) {
     const [isScrolled, setIsScrolled] = useState(false);    // 스크롤 여부
 
     /* 스크롤 위치(window.scrollY)가 40px 초과 시, 
@@ -29,7 +30,7 @@ export default function Header({openMobileMenu}: Props) {
                         <li><a href="#contact" className="menu">1:1 문의</a></li>
                     </ul>
                 </nav>
-                <button type="button" className="laptop:hidden toggle-btn" onClick={openMobileMenu} aria-label="메뉴 열기">
+                <button type="button" className="laptop:hidden toggle-btn" onClick={openMobileMenu} aria-label="메뉴 열기" aria-controls="mobile-menu" aria-expanded={isShow}>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-[1em] h-[1em]">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                     </svg>

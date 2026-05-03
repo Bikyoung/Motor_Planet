@@ -8,6 +8,8 @@ type Props = {
 };
 
 export default function Contact({openModal}: Props) {
+    type TFormField = "name" | "tel" | "content" | "agree";
+
     interface IFormConfigs {
         required: boolean;
         pattern?: RegExp;
@@ -15,15 +17,10 @@ export default function Contact({openModal}: Props) {
         action?: string;
     }
 
-    interface IFormErrors {
-        name?: string;
-        tel?: string;
-        content?: string;
-        agree?: string;
-    }
+    type TFormErrors = Partial<Record<TFormField, string>>;
 
     // 유효성 검사가 필요한 입력 필드의 규칙 정의
-    const formConfigs: Record<string, IFormConfigs> = {
+    const formConfigs: Record<TFormField, IFormConfigs> = {
         name: {
             required: true
         },
@@ -49,28 +46,29 @@ export default function Contact({openModal}: Props) {
         content: "",
         agree: false
     });
-    const [formErrors, setFormErrors] = useState<IFormErrors>({});
+    const [formErrors, setFormErrors] = useState<TFormErrors>({});
     const [hasSubmitted, setHasSubmitted] = useState(false);    // 제출 시도 여부 (실시간 유효성 검증 트리거)
     const [isSubmitting, setIsSubmitting] = useState(false);    // 제출 진행 상태
     const formRef = useRef<HTMLFormElement>(null);
 
     // onSubmit에 등록할 이벤트 핸들러
     const handleSubmit = (e: SubmitEvent<HTMLFormElement>) => {
-        let computedFormErrors: IFormErrors = {};    // 반복문 내에서 폼 에러 메시지를 누적하는 객체로, 최종 결과는 formErrors에 전달
+        let computedFormErrors: TFormErrors = {};    // 반복문 내에서 폼 에러 메시지를 누적하는 객체로, 최종 결과는 formErrors에 전달
         let firstErrorName = "";
         
         e.preventDefault();
         setHasSubmitted(true);
  
         Object.entries(formValues).forEach(([name, value]) => {
-            if(!formConfigs[name]) return;
+            const key = name as TFormField;
+            
+            if(!formConfigs[key]) return;
 
             const inputValue = value;
-            const inputPattern = formConfigs[name]?.pattern;
-            const inputAction = formConfigs[name]?.action;
-            const inputFormat = formConfigs[name]?.format;
+            const inputPattern = formConfigs[key]?.pattern;
+            const inputAction = formConfigs[key]?.action;
+            const inputFormat = formConfigs[key]?.format;
 
-            const key = name as keyof IFormErrors;
             computedFormErrors[key] = validateField({value: inputValue, pattern: inputPattern, action: inputAction, format: inputFormat});
 
             if(!firstErrorName && computedFormErrors[key]) {
@@ -80,9 +78,10 @@ export default function Contact({openModal}: Props) {
 
         setFormErrors(computedFormErrors);
 
-        // 에러 있을 시, 첫번째 에러 필드에 자동 포커스
+        // 에러 있을 시, 첫번째 에러 필드에 자동 스크롤 및 포커스
         if(firstErrorName && formRef.current) {
             const firstErrorField = formRef.current.querySelector(`[name="${firstErrorName}"]`) as HTMLInputElement | HTMLTextAreaElement;
+            firstErrorField.scrollIntoView({behavior: "smooth", block: "center"});
             firstErrorField.focus();
         } else {
             // 에러 없을 시, 서버에 폼 제출
@@ -131,7 +130,7 @@ export default function Contact({openModal}: Props) {
     // onChange에 등록할 이벤트 핸들러
     const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const input = e.target;
-        const inputName = input.name;
+        const inputName = input.name as TFormField;
         const inputValue = (input instanceof HTMLInputElement && input.type === "checkbox")
             ? input.checked
             : input.value;
@@ -161,24 +160,24 @@ export default function Contact({openModal}: Props) {
                 </h2>
 
                 {/* ---------- Form ---------- */}
-                <form className="flex flex-col gap-md w-full p-40 bg-white rounded-[10px] desktop:max-w-900" noValidate onSubmit={handleSubmit} ref={formRef} data-aos="fade-up" data-aos-anchor-placement="bottom-center" data-aos-delay="550">
+                <form className="flex flex-col gap-md w-full p-40 bg-white rounded-[10px] desktop:max-w-900" noValidate onSubmit={handleSubmit} ref={formRef} data-aos="fade-up" data-aos-anchor-placement="center-center" data-aos-delay="500">
 
                     {/* ---------- User Info (Name, Tel) ---------- */}
                     <fieldset className="flex flex-col laptop:flex-row gap-md">
                         <legend className="sr-only">사용자 정보</legend>
                         <div className={`flex-1 ${styles.formField}`}>
                             <label htmlFor="name" className={styles.label}>
-                                이름 <span className={styles.essential}>*</span>
+                                이름 <span className={styles.essential} aria-hidden="true">*</span>
                             </label>
-                            <input type="text" className={`${styles.input} ${formErrors.name ? styles.error : ""}`} id="name" name="name" placeholder="이름을 입력하세요" required onChange={handleChange} value={formValues.name} />
-                            <p className={styles.errorMessage}>{formErrors.name}</p>
+                            <input type="text" id="name" className={`${styles.input} ${formErrors.name ? styles.error : ""}`} name="name" placeholder="이름을 입력하세요" required onChange={handleChange} value={formValues.name} aria-invalid={!!formErrors.name} aria-describedby={formErrors.name ? "name-error" : undefined} />
+                            <p id="name-error" className={styles.errorMessage} aria-hidden={!formErrors.name}>{formErrors.name}</p>
                         </div>
                         <div className={`flex-1 ${styles.formField}`}>
                             <label htmlFor="tel" className={styles.label}>
-                                연락처 <span className={styles.essential}>*</span>
+                                연락처 <span className={styles.essential} aria-hidden="true">*</span>
                             </label>
-                            <input type="tel" className={`${styles.input} ${formErrors.tel ? styles.error : ""}`} id="tel" name="tel" placeholder="연락처를 입력하세요 (숫자만)" inputMode="numeric" required onChange={handleChange} value={formValues.tel} />
-                            <p className={styles.errorMessage}>{formErrors.tel}</p>
+                            <input type="tel" id="tel" className={`${styles.input} ${formErrors.tel ? styles.error : ""}`} name="tel" placeholder="연락처를 입력하세요 (숫자만)" required inputMode="numeric" onChange={handleChange} value={formValues.tel} aria-invalid={!!formErrors.tel} aria-describedby={formErrors.tel ? "tel-error" : undefined} />
+                            <p id="tel-error" className={styles.errorMessage} aria-hidden={!formErrors.tel}>{formErrors.tel}</p>
                         </div>
                     </fieldset>
 
@@ -189,10 +188,10 @@ export default function Contact({openModal}: Props) {
                     </div>
                     <div className={styles.formField}>
                         <label htmlFor="content" className={styles.label}>
-                            문의 내용 <span className={styles.essential}>*</span>
+                            문의 내용 <span className={styles.essential} aria-hidden="true">*</span>
                         </label>
-                        <textarea className={`h-250 laptop:h-200 ${styles.input} ${formErrors.content ? styles.error : ""}`} id="content" name="content" placeholder="문의 내용을 입력하세요" required onChange={handleChange} value={formValues.content}></textarea>
-                        <p className={styles.errorMessage}>{formErrors.content}</p>
+                        <textarea className={`h-250 laptop:h-200 ${styles.input} ${formErrors.content ? styles.error : ""}`} id="content" name="content" placeholder="문의 내용을 입력하세요" required onChange={handleChange} value={formValues.content} aria-invalid={!!formErrors.content} aria-describedby={formErrors.content ? "content-error" : undefined}></textarea>
+                        <p id="content-error" className={styles.errorMessage} aria-hidden={!formErrors.content}>{formErrors.content}</p>
                     </div>
                     
                     {/* ---------- Policy & Submit ---------- */}
@@ -201,14 +200,14 @@ export default function Contact({openModal}: Props) {
                             <span className={styles.essential}>*</span>는 필수 입력 항목입니다
                         </p>
                         <label className="flex items-center gap-5">
-                            <input type="checkbox" className={`sr-only ${styles.checkbox}`} name="agree" required onChange={handleChange} checked={formValues.agree} />
+                            <input type="checkbox" className={`absolute opacity-0 ${styles.checkbox}`} name="agree" required onChange={handleChange} checked={formValues.agree} aria-invalid={!!formErrors.agree} aria-describedby={formErrors.agree ? "agree-error" : undefined} />
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className={`size-14 text-[#CCCCCC] laptop:size-20 ${styles.customCheckbox}`}>
                                 <path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd" />
                             </svg>
                             <span className={styles.agreeLabel}>[필수] 개인정보 수집 및 이용 동의</span>
                         </label>
-                        <button type="button" className="h-44 px-xs text-body-sm bg-(--color-blue-50)" onClick={openModal}>전문 보기</button>
-                        <p className={styles.errorMessage}>{formErrors.agree}</p>
+                        <button type="button" className="h-44 px-xs text-body-sm bg-(--color-blue-50)" onClick={openModal} aria-controls="privacy-modal">전문 보기</button>
+                        <p id="agree-error" className={styles.errorMessage} aria-hidden={!formErrors.agree}>{formErrors.agree}</p>
                     </div>
                     <button type="submit" className="py-12 mt-md w-full text-body-lg bg-(--color-blue-50) rounded-full laptop:py-15" disabled={isSubmitting}>
                         {isSubmitting ? "제출 중..." : "문의하기" }

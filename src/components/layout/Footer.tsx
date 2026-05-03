@@ -9,7 +9,7 @@ export default function Footer({openModal}: Props) {
                 <a href="/" className="text-[#CCCCCC] logo">MOTOR PLANET</a>
                 <div className="flex flex-col items-start gap-[8px] text-gray text-body-sm laptop:gap-[10px]">
                     <p>
-                        모토플래닛 <button type="button" className="text-white" onClick={openModal}>이용약관 · 개인정보 처리방침</button>
+                        모토플래닛 <button type="button" className="text-white" onClick={openModal} aria-controls="privacy-modal" aria-haspopup="dialog">이용약관 · 개인정보 처리방침</button>
                     </p>
                     <address className="flex flex-col items-start gap-[8px] not-italic laptop:gap-[10px]">
                         <p>사업자: 모토플래닛(주) | 대표: 홍길동</p>

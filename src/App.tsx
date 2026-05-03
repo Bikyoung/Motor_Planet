@@ -42,7 +42,7 @@ function App() {
 
   return (
     <>
-      <Header openMobileMenu={openMobileMenu} />
+      <Header isShow={isShow} openMobileMenu={openMobileMenu} />
       <Hero />
       <Difference />
       <Inspection />

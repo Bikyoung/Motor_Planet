@@ -8,7 +8,7 @@ type Props = {
 export default function MobileMenu({isShow, closeMobileMenu}: Props) {
     return (
         <Portal targetId="portal-root">
-            <div className={`fixed inset-0 z-100 bg-blue transition-translate duration-300 ease-in-out ${isShow ? "translate-x-0" : "-translate-x-full"}`}>
+            <div id="mobile-menu" className={`fixed inset-0 z-100 bg-blue transition-translate duration-300 ease-in-out ${isShow ? "translate-x-0" : "-translate-x-full"}`} aria-label="모바일 메뉴" role="dialog" aria-modal="true">
                 <div className="content-wrapper gap-0">
                     <div className="flex flex-row items-center justify-between w-full py-xs border-b">
                         <a href="/" className="logo">MOTOR PLANET</a>

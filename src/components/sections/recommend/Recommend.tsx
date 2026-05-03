@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { Pagination, A11y, Keyboard } from "swiper/modules";
 
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -24,10 +24,15 @@ export default function Recommend() {
                 </h2>
                 <Swiper 
                     className={`w-full laptop:w-fit ${styles.recommendList}`}
-                    modules={[Pagination]}
+                    modules={[Pagination, A11y, Keyboard]}
                     spaceBetween={swiperGap.mobile}
                     slidesPerView="auto"
                     pagination={{clickable: true}}
+                    a11y={{ 
+                        enabled: true,
+                        slideLabelMessage: '{{index}} / {{slidesLength}}'
+                     }}
+                    keyboard={{ enabled: true }}
                     enabled={true}
                     breakpoints={{
                         480: {
@@ -40,7 +45,7 @@ export default function Recommend() {
                             spaceBetween: 0
                         }
                     }}
-                    data-aos="fade-up" data-aos-anchor-placement="center-center" data-aos-delay="500"
+                    data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-delay="500"
                 >
                     {RecommendItems.map(item => (
                         <SwiperSlide key={item.title} className="w-[clamp(17.5rem,16.253rem+4.164vw,21.25rem)]">
@@ -48,8 +53,8 @@ export default function Recommend() {
                         </SwiperSlide>
                     ))}
                 </Swiper>
-                <a href="#" className={`inline-block px-20 py-10 text-body-lg border rounded-full transition-all duration-500 ease-in-out ${styles.recommendCta}`} data-aos="zoom-in" data-aos-anchor-placement="bottom-center" data-aos-easing="ease-in-out" data-aos-delay="700">
-                    더 많은 차량 보기
+                <a href="/" className={`inline-block px-20 py-10 text-body-lg border rounded-full transition-all duration-500 ease-in-out ${styles.recommendCta}`} data-aos="zoom-in" data-aos-anchor-placement="center-center" data-aos-easing="ease-in-out" data-aos-delay="550">
+                    더 많은 중고차 보기
                 </a>
             </div>
         </section>

@@ -36,8 +36,8 @@
     background-position: left;
 }
 
-.carStatus {
-    @apply flex justify-between items-center text-body-lg;
+.infoLabel, .infoData {
+    @apply text-body-lg;
 
     height: clamp(2.375rem, 2.292rem + 0.278vw, 2.625rem);
 }
@@ -47,7 +47,7 @@
 }
 
 .infoData {
-    @apply text-black;
+    @apply text-right text-black;
 }
 
 @media (min-width: 1200px) {

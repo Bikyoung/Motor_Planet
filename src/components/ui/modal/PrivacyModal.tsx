@@ -13,10 +13,10 @@ export default function PrivacyModal({isOpen, closeModal}: Props) {
     return (
         <Portal targetId="portal-root">
             <div className="fixed inset-0 z-150 flex items-center justify-center bg-black/70">
-                <div className="w-3/4 p-sm bg-white text-black rounded-[10px]">
+                <div id="privacy-modal" className="w-3/4 p-sm bg-white text-black rounded-[10px]" role="dialog" aria-modal="true" aria-labelledby="privacy-modal-title">
                     <div className="flex items-center justify-between">
-                        <h3 className="text-card-title">개인정보 수집 및 이용 동의</h3>
-                        <button className="toggle-btn" onClick={closeModal}>
+                        <h3 id="privacy-modal-title" className="text-card-title">개인정보 수집 및 이용 동의</h3>
+                        <button className="toggle-btn" onClick={closeModal} aria-label="모달 닫기">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-[1em] h-[1em]">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
                             </svg>
