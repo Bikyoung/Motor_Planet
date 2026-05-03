@@ -53,9 +53,11 @@ export default function Recommend() {
                         </SwiperSlide>
                     ))}
                 </Swiper>
-                <a href="/" className={`inline-block px-20 py-10 text-body-lg border rounded-full transition-all duration-500 ease-in-out ${styles.recommendCta}`} data-aos="zoom-in" data-aos-anchor-placement="center-center" data-aos-easing="ease-in-out" data-aos-delay="550">
-                    더 많은 중고차 보기
-                </a>
+                <div data-aos="zoom-in" data-aos-anchor-placement="top-center" data-aos-easing="ease-in-out" data-aos-delay="550">
+                    <a href="/" className={`inline-block px-20 py-10 text-body-lg border rounded-full transition-all duration-500 ease-in-out ${styles.recommendCta}`}>
+                        더 많은 중고차 보기
+                    </a>
+                </div>
             </div>
         </section>
     );

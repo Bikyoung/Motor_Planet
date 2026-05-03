@@ -20,13 +20,13 @@
     @apply bg-white
 }
 
-.recommendCta {
+.recommendCta { 
     /* 흰색과 투명 영역이 50%씩 나뉜, 구분이 명확한 그라데이션 */
     background-image: linear-gradient(to right, rgba(255,255,255,0.2) 50%, transparent 50%);   
-     /* 배경 너비를 200%로 설정하여 흰색과 투명 영역을 각 100% 너비로 설정 */
+    /* 배경 너비를 200%로 설정하여 흰색과 투명 영역을 각 100% 너비로 설정 */
     background-size: 200% 100%;    
     /* 배경을 요소의 우측 끝에 붙여 투명 영역만 보임 */   
-    background-position: right;    
+    background-position: right;  
 }
 
 .recommendCta:hover {
